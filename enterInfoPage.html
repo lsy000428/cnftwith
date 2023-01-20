@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html style="scroll-behavior: smooth;">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="IE=edge">
+        <meta name="author" content="CookiePawn">
+        <meta name="description" content="test page">
+        <title>Enter Info Page</title>
+        <link href="css/enterInfoPage.css" rel="stylesheet">
+        <script src="js/scrollPercent.js" charset="utf-8"></script>
+        <script src="js/SameSite.js" charset="utf-8"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://static.nid.naver.com/js/naveridlogin_js_sdk_2.0.2.js" charset="utf-8"></script>
+        <script>
+            var nicknameVal;
+        </script>
+    </head>
+    <body>
+        <center>
+            <header class="header mainHeader">
+                <nav class="nav mainNav">
+                    <div style="width: 20%; height: 100%; float: left;">
+                        <a class="a mainLogoLink" href="/main">
+                            <img class="img mainLogo" src="img/메인로고.svg" alt="메인로고">
+                        </a>
+                    </div>
+                    <div style="width: 60%; height: 100%; float: left;">
+                        <header id="dropdownHeader" class="dropdown">
+                            <ul class="clearfix">
+                                <li class="li c1"><span class="mainCategory">기업정보</span>
+                                    <ul>
+                                        <li><a href="/enterInfo">- 기업이 하는 일</a></li>
+                                        <li><a href="/enterInfo">- 경영 이념</a></li>
+                                        <li><a href="/enterInfo">- 투자정보</a></li>
+                                        <li><a href="/enterInfo">- 채용정보</a></li>
+                                    </ul>
+                                    <ul class="li sub1" style="left: 200px;">
+                                        <li><a href="/enterInfo">- 운영진 소개</a></li>
+                                        <li><a href="/enterInfo">- CEO 메세지</a></li>
+                                        <li><a href="/enterInfo">- 투자현황</a></li>
+                                    </ul> 
+                                </li>
+                                <li class="li c2"><span class="mainCategory">CFNT 정보 제공</span>
+                                    <ul style="right: 100px; position: relative;">
+                                        <li>- CNFT 용어</li>
+                                        <li>- CNFT 캘린더</li>
+                                        <li><a href="/cnftPost_Login">- CNFT 뉴스</a></li>
+                                        <li><a href="/main#cnftNoticeID">- CNFT 소개</a></li>
+                                    </ul>
+                                    <ul class="li sub1" style="left: 100px; bottom: 230px; position: relative;">
+                                        <li>- CNFT 민팅</li>
+                                        <li>- CNFT 거래소</li>
+                                    </ul>
+                                    <ul class="li sub2"style="left: 300px; bottom:360px; position: relative;">
+                                        <li>- CNFT 거래 방법</li>
+                                        <li>- CNFT 지갑</li>
+                                    </ul>
+                                    <ul class="li sub3" style="left: 500px; bottom: 440px; position: relative;">
+                                        <li></li>
+                                        <li>- CNFT 서비스</li>
+                                    </ul>
+                                </li>
+                                <li class="li c3"><span class="mainCategory">에이다 뉴스</span>
+                                    <ul>
+                                        <li>- 에이다 생태계</li>
+                                        <li><a href="/adaNews">- 에이다 뉴스</li>
+                                        <li><a href="/main#cnftNewsAdaID">- 에이다 시세</a></li>
+                                    </ul>
+                                </li>
+                                <li class="li c4"><span class="mainCategory">브로커리지</span>
+                                    <ul>
+                                        <li>- 브로커리지란?</li>
+                                        <li>- 기업 브로커리지 소개</li>
+                                        <li>- 브로커리지 거래 문의</li>
+                                    </ul>
+                                </li>
+                                <li class="li c5"><span class="mainCategory">문의사항</span>
+                                    <ul>
+                                        <li>- 고객 문의</li>
+                                        <li>- FAQ</li>
+                                        <li id="departmentFAQ">- 부서 문의</li>
+                                    </ul>
+                                    <ul class="li sub1" style="left: 100px; top: 100px; position: relative;">
+                                        <li>- 인사팀</li>
+                                        <li>- 개발팀</li>
+                                        <li>- 운영진</li>
+                                    </ul>
+                                </li>
+                                <li class="li c6"><span class="mainCategory">프리미엄 서비스</span>
+                                    <ul>
+                                        <li><a href="/main#subscriptionID">- CNFT WITH 구독</a></li>
+                                        <li>- CNFT WITH 펀드</li>
+                                        <li>- CNFT WITH 브로커리지 연결</li>
+                                        <li>- 추가예정</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </header>
+                    </div>
+                    <div style="width: 20%; height: 100%; float: right;">
+                        <button class="btn mainLogout" onclick="naverLogout(); return false;">
+                            <img class="img mainLoginImg" src="img/로그아웃.png" alt="로그아웃" title="로그아웃" width="30px">
+                        </button>
+                        <button class="btn mainLogin" id="login_userInfoBtn" onclick="location.href='/login'">
+                            <img class="img mainLoginImg" id="login_userInfoImg" src="img/로그인.png" alt="로그인" title="로그인" width="30px">
+                        </button>
+                        <span id="userNickName" style="float: right; margin-right: 10px;">Please Login!</span>    
+                    </div>
+                </nav>
+                <div class="progress-container">
+                    <div class="progress-bar"></div>
+                </div>
+            </header>
+            <div class="div contHome">
+                <div id="dimmedID" class="dimmed"></div>
+            </div>
+        </center>
+        <script src="js/fullDropdown.js" charset="utf-8"></script>
+        <script src="js/naverLogin_callBack.js" charset="utf-8"></script>
+    </body>
+</html>

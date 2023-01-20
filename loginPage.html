@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="IE=edge">
+        <meta name="author" content="CookiePawn">
+        <meta name="description" content="login Page">
+        <title>Login Page</title>
+        <link href="css/loginPage.css" rel="stylesheet">
+        <script src="https://static.nid.naver.com/js/naveridlogin_js_sdk_2.0.2.js" charset="utf-8"></script>
+    </head>
+    <body>
+        <center>
+            <div class="loginImgDiv">
+                <img src="img/Welcome.jpg" alt="로그인 화면 이미지" title="로그인 화면 이미지" width="600px" style="left: 90px; top: 130px; position: relative;"> 
+                <strong style="left: -700px; top: 335px; position: relative;">Author : CookiePawn</strong>
+            </div>
+            <div class="loginDiv">
+                <h3 style="top: 10px; position: relative;">로그인 관리자</h3>
+                <ul class="ul loginList">
+                    <li class="li">
+                        <a class="a loginLink" id="naverIdLogin_loginButton" href="javascript:void(0)">
+                            <img class="img loginIcon" src="img/네이버로그인.png" alt="네이버로그인아이콘" width="20px">
+                            <span class="loginIconText">네이버 로그인</span>
+                        </a>
+                    </li>
+                    <li class="li">
+                        <a class="a loginLink" href="indexLogin.html">
+                            <img class="img loginIcon" src="img/구글로그인.png" alt="구글로그인아이콘" width="20px">
+                            <span class="loginIconText">구글 로그인</span>
+                        </a>
+                    </li>
+                </ul>
+                <input class="Btn cancel" type="submit" value="취소" name="loginBtn" onclick="location.href='/'">
+            </div>
+        </center>
+        <script src="js/naverLogin_loginPage.js" charset="utf-8"></script>
+    </body>
+</html>
